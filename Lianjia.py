@@ -1,5 +1,4 @@
 '''爬取链家二手房数据，保存到数据库'''
-import time
 import requests
 import re
 import pymysql
@@ -65,7 +64,6 @@ class LianjiaSpider:
             # 拼接url,访问每页的数据
             url = self.baseurl + 'pg' + str(page)
             self.getPage(url)
-            time.sleep(1)
         # 断开数据库连接
         self.cursor.close()
         self.db.close()
